@@ -1,4 +1,4 @@
-from fastapi import Fastapi, HTTPException, Header
+from fastapi import Fastapi, HTTPException, Header, Field
 from pydantic import BaseModel
 
 
@@ -10,7 +10,7 @@ def health():
 
 
 class LoginIn(BaseModel):
-    email: str
+    email: str =  Field(validacion_Extra)
     password: str
 
 
